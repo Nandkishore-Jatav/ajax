@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <div id="demo">
+        <p>Let AJAX change this text.</p>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+    <div id="hello">
+        <h1>
+            Hello how are you Mr. Nandkishore Jatav
+        </h1>
+        <p>
+            1) Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde et natus in ducimus impedit blanditiis
+            dolorum
+            laudantium nihil fugit ex. Provident ipsa ab molestias alias libero possimus assumenda similique vitae?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, possimus blanditiis pariatur iure
+            assumenda veritatis neque fuga alias quisquam facilis, unde nostrum? Cum distinctio quod, perferendis optio
+            quos vel doloremque!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Incidunt unde sed et earum ut, inventore, cumque autem nihil quod commodi
+            doloribus dignissimos culpa voluptate aspernatur soluta error ipsam suscipit in similique
+            porro, iusto dolorem deserunt. Quidem consectetur aut blanditiis tempora ipsum
+            perferendis soluta recusandae natus esse, aspernatur perspiciatis quis, repudiandae
+            ratione iure. Doloremque consectetur harum deleniti esse, sit quia blanditiis labore
+            dolorum quas nemo doloribus natus quisquam odit nam ducimus, molestias atque ab
+            architecto! Exercitationem, quisquam ipsum? Itaque perferendis accusamus doloribus
+            tempora ex tenetur dolorem laboriosam impedit, beatae quos ut modi illum, officiis
+            mollitia iusto vitae, aspernatur excepturi sunt. Ex repudiandae voluptatum ipsum,
+            voluptate quae iure necessitatibus cumque sit explicabo! Voluptas culpa ut nobis
+            pariatur exercitationem nihil saepe, accusamus maiores non eligendi tempore
+            voluptatem laboriosam aperiam nostrum excepturi deleniti maxime, vel sapiente
+            voluptatum officia! Eius aspernatur consequatur dolorum pariatur eaque amet!
+            Est mollitia optio rem, minus possimus ipsam tempora deleniti, adipisci
+            nihil quas, incidunt saepe! Perspiciatis harum magnam quia dolorem sapiente
+            que inventore explicabo possimus iusto adipisci quam debitis unde consequatur
+            reprehenderit a aperiam ullam, mollitia recusandae tenetur. Placeat modi at
+            fugit, laudantium, a quaerat rerum pariatur laborum perspiciatis quibusdam
+            in natus numquam consectetur, vitae fuga. Quas unde molestias est, nihil
+            nobis et placeat consequuntur deserunt excepturi, illum id repellendus
+            qui aut animi. Consectetur autem illum tempora, soluta odio quasi. Atque
+            facilis quidem in quae dolore soluta eaque optio nulla suscipit
+            totam, sed tempora alias cumque consequatur adipisci quasi minus
+            reprehenderit sit non laboriosam mollitia, quaerat ducimus numquam.
+            Reiciendis obcaecati doloribus distinctio in eius! Porro eum quaerat
+            ad, accusantium explicabo modi maxime architecto eveniet, nam
+            exercitationem expedita repellendus voluptatum. Molestias doloremque
+            quas deleniti atque vero labore sunt, nostrum non quisquam saepe porro
+            eius aspernatur laudantium tempora iusto, enim explicabo accusamus
+            assumenda a laborum ullam amet iure reiciendis. Nemo saepe laborum
+            quod temporibus harum quo nostrum! Quia maiores architecto nemo
+            temporibus provident quisquam quidem iusto vero non dolor illo,
+            iste eos dolorem dolorum placeat voluptatum ipsum adipisci laborum. Hic quisquam
+            consectetur autem soluta perferendis deleniti modi dolores odit aspernatur laboriosam
+            dignissimos in architecto saepe quibusdam atque eum, nemo alias nam voluptate doloribus
+            ab, molestiae dolorum recusandae. Facere omnis nobis eum saepe. Illo repudiandae
+            molestias aut adipisci sed nam reprehenderit impedit velit laboriosam, magnam est
+            iusto asperiores sapiente dolorem perspiciatis ut molestiae
+            quae consequuntur, expedita totam. Harum distinctio asperiores facilis non!
+            Enim eos sunt a numquam molestiae nobis magni nostrum error.
+        </p>
+        <button type="button" onclick="hellow()">Click Me</button>
+    </div>
+    <div id="buttons">
+        <h2>Harum distinctio asperiores facilis non! Enim eos sunt a numquam molestiae nobis magni nostrum error.</h2>
+        <p>
+            2) Nemo saepe laborum quod temporibus harum quo nostrum! Quia maiores architecto nemo
+            temporibus provident quisquam quidem iusto vero non dolor illo,
+            iste eos dolorem dolorum placeat voluptatum ipsum adipisci laborum. Hic quisquam
+            consectetur autem soluta perferendis deleniti modi dolores odit aspernatur laboriosam
+            dignissimos in architecto saepe quibusdam atque eum, nemo alias nam voluptate doloribus
+            ab, molestiae dolorum recusandae. Facere omnis nobis eum saepe. Illo repudiandae
+            molestias aut adipisci sed nam reprehenderit impedit velit laboriosam, magnam est
+            iusto asperiores sapiente dolorem perspiciatis ut molestiae
+            quae consequuntur, expedita totam. Harum distinctio asperiores facilis non!
+            Enim eos sunt a numquam molestiae nobis magni nostrum error.
+        </p>
+        <button type="button" onclick="clicks()">Click me</button>
+    </div>
+
+    <script>
+        //******************************
+        function loadDoc() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                //     document.getElementById("demo").innerHTML = this.responseText;
+                // }
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                }
+                else if (this.readyState == 4 && this.status == 404) {
+                    document.getElementById("demo").innerHTML = "File not found.";
+                }
+            }
+            //   xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts");
+            xhttp.open("GET", "ajax_info.txt");
+            xhttp.send();
+        }
+        //***************************************
+        function hellow() {
+            const nand = new XMLHttpRequest();
+            nand.onload = function () {
+                document.getElementById("hello").innerHTML = this.responseText;
+            }
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("").innerHTML = this.responseText;
+
+            } else if (this.readyState = 4 && this.status == 404) {
+                document.getElementById("").innerHTML = "File not found.";
+            }
+
+            nand.open("GET", "https://jsonplaceholder.typicode.com/posts", true);
+            nand.send();
+        }
+        //****************************************
+        function clicks() {
+            var naya = new XMLHttpRequest();
+            naya.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("buttons").innerHTML = this.responsetext;
+                } else if (this.readyState == 4 && this.status == 404) {
+                    document.getElementById("buttons").innerHTML = "File not found.";
+                }
+            }
+            naya.open("GET", "https://jsonplaceholder.typicode.com/users");
+            naya.send();
+        }
+    </script>
+</body>
+
+</html>
